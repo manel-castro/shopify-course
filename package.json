@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tailwind": "npx tailwind -i ./src/tailwind.css -o ./assets/application.css.liquid --watch",
+    "shopify": "theme watch"
   },
   "keywords": [],
   "author": "",
