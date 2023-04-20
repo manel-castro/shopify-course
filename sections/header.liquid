@@ -1,7 +1,7 @@
 {% assign main_menu_linklist = linklists[section.settings.menu].links %}
 {% comment %} {{ shop.customer_accounts_enabled }} {% endcomment %}
 
-<div class="relative bg-white" x-data="{ mobileMenuOpen: true }">
+<div class="relative bg-white" x-data="{ mobileMenuOpen: false }">
   <div class="mx-auto px-4 sm:px-6">
     <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
       <!-- STORE NAME / STORE LOGO -->
@@ -20,10 +20,10 @@
       </div>
 
       <!-- NAVIGATION MENU -->
-      <nav x-data="{ open: false }" class="hidden md:flex space-x-10">
+      <nav class="hidden md:flex space-x-10">
         {% for link in main_menu_linklist %}
           {% if link.links != blank %}
-            <div class="relative">
+            <div x-data="{ open: false }" class="relative">
               <button
                 x-on:click="open = !open"
                 type="button"
